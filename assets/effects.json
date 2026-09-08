@@ -1,0 +1,21 @@
+{
+  "file": "assets/effects.png",
+  "width": 96,
+  "height": 96,
+  "columns": 6,
+  "anchor": [
+    48,
+    48
+  ],
+  "fps": 12,
+  "loop": false,
+  "rows": [
+    "shock",
+    "dust",
+    "jump",
+    "magic",
+    "slow",
+    "revive",
+    "record"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "uaeng": {
+    "path": "assets/source-sheets/uaeng.png",
+    "rows": [
+      "idle",
+      "run",
+      "prepare",
+      "kick",
+      "finish",
+      "celebrate"
+    ]
+  },
+  "bird": {
+    "path": "assets/source-sheets/bird.png",
+    "rows": [
+      "flap",
+      "spin",
+      "fall",
+      "jump",
+      "hit",
+      "bounce",
+      "stop",
+      "revive"
+    ],
+    "width": 48,
+    "height": 48,
+    "bird": true
+  },
+  "maid": {
+    "path": "assets/source-sheets/maid.png",
+    "rows": [
+      "idle",
+      "catch",
+      "prepare",
+      "throw"
+    ],
+    "width": 176,
+    "height": 112,
+    "anchorX": 48
+  },
+  "inori": {
+    "height": 112,
+    "path": "assets/source-sheets/inori.png",
+    "rows": [
+      "idle",
+      "cast",
+      "prepare",
+      "uppercut"
+    ],
+    "width": 112
+  },
+  "ppung": {
+    "height": 112,
+    "path": "assets/source-sheets/ppung.png",
+    "rows": [
+      "idle",
+      "slow",
+      "bless"
+    ],
+    "width": 112
+  },
+  "koko": {
+    "width": 144,
+    "path": "assets/source-sheets/koko.png",
+    "height": 112,
+    "rows": [
+      "idle",
+      "kick",
+      "transform",
+      "punch"
+    ],
+    "anchorX": 52
+  }
+}

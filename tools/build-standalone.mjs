@@ -1,0 +1,11 @@
+import fs from 'node:fs';import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const manifest=JSON.parse(read('assets/manifest.json'));
+const dataURL=p=>'data:image/png;base64,'+fs.readFileSync(path.join(root,p)).toString('base64');
+for(const meta of Object.values(manifest.sheets))meta.file=dataURL(meta.file);
+const embedded={manifest,effects:dataURL('assets/effects.png')};
+const files=['config','gauge','field','effects','physics','audio','assets','render','main'];
+const code=files.map(name=>read('src/'+name+'.js').replace(/import\s+[^;]+;/g,'').replace(/^export /gm,'')).join('\n');
+let html=read('source.html').replace('<link rel="stylesheet" href="style.css">','<style>'+read('style.css')+'</style>');
+html=html.replace('<script type="module" src="src/main.js"></script>','<script>window.__EMBEDDED_ASSETS__='+JSON.stringify(embedded)+'</script><script type="module">'+code.replace(/<\/script/gi,'<\\/script')+'</script>');
+fs.writeFileSync(path.join(root,'index.html'),html);console.log('Built index.html ('+Math.round(Buffer.byteLength(html)/1024)+' KiB), no external resources.');
